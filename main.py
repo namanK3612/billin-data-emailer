@@ -19,17 +19,12 @@ logging.basicConfig(
 line_break = "---"
 
 # ---------------- Config ---------------- #
-SMTP_SERVER = "smtp.email.ap-mumbai-1.oci.oraclecloud.com"
-SMTP_PORT = 587
-USERNAME = "ocid1.user.oc1..aaaaaaaa2c3ixyurrci5w2nq5ghop7yamjogmf4drfttpr5vlk4x4heont7q@ocid1.tenancy.oc1..aaaaaaaayjeh3xfidtcwqz4juu6wrhve5xnakxt5mw3fdlzqmyhvh3vnfi6a.m8.com"
-PASSWORD = "4$DDNvkYQzfg]uKc<k05"
-FROM_ADDRESS = "kimbal-alerts@apdclintelli.in"
+SMTP_SERVER = ""
+SMTP_PORT = []
+USERNAME = ""
+PASSWORD = ""
+FROM_ADDRESS = ""
 TO_ADDRESS = [
-    "harojyoti.borah@kimbal.io",
-    "Yash.jain@kimbal.io",
-    "akhtar.nawaz@kimbal.io",
-    "saiful.khan@kimbal.io",
-    "naman.kumar@kimbal.io"
     ]
 
 MAX_ATTACHMENT_SIZE_MB = 10  # Set max size per attachment
@@ -89,7 +84,7 @@ def send_email_with_attachment(attachment_path):
 
     basename = os.path.basename(attachment_path)
     part_number = basename.split("Part")[-1].replace(".7z", "") if "Part" in basename else basename.replace(".7z", "")
-    subject = f"Single Phase Billing Data Dump || APDCL Pkg 7 || File_Number: {part_number}"
+    subject = f"_____________ Data Dump || ________ || File_Number: {part_number}"
     body = (
         "Hi Team,\n\n"
         "Please find attached the validated and unique Single Phase Billing Data Dump for today.\n\n"
