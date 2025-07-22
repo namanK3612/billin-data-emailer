@@ -7,8 +7,8 @@ $originalFileName = "QueuePushAudit"
 $newFileName = "${originalFileName}_$dateString"
 
 # server details where query would run
-$serverName = "APPRDCRYSHESDB1"
-$databaseName = "Kimbal_Support"
+$serverName = "[]"
+$databaseName = "[]"
 
 # sql query you want to run for this report
 $query = "
@@ -29,14 +29,14 @@ USE [Kimbal_Support]
 "	
 
 # location you want to keep the report in your local
-$outputFile = "D:\dist\$newFileName.csv"	
+$outputFile = "[]\$newFileName.csv"	
 
 # Load the SQL Server module
 Import-Module SqlServer
 
 try {
     # Create a SQL connection
-    $connectionString = "Server=$serverName;Database=$databaseName;User Id=KimbalHESUser;Password=3y5F@ikeTQ01;"
+    $connectionString = "Server=$serverName;Database=$databaseName;User Id=[];Password=[];"
     $connection = New-Object System.Data.SqlClient.SqlConnection
     $connection.ConnectionString = $connectionString
 
